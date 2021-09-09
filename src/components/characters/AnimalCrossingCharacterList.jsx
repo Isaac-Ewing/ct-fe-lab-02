@@ -7,6 +7,7 @@ const CharacterList = ({ characters }) => (
     {characters.map((character) => (
       <li key={character.name}>
         <AnimalCrossingCharacter
+          id={character.id}
           name={character.name}
           quote={character.quote}
           personality={character.personality}

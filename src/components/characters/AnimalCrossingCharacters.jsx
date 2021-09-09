@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const AnimalCrossingCharacter = ({ name, quote, personality }) => (
+const AnimalCrossingCharacter = ({ id, name, quote, personality }) => (
   <>
-    <p>{name}</p>
+    <Link to={`/${id}`}>{name}</Link>
     <p>{quote}</p>
     <p>{personality}</p>
   </>
 );
 
 AnimalCrossingCharacter.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
   personality: PropTypes.string.isRequired
