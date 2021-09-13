@@ -3,8 +3,11 @@ import { render, screen } from '@testing-library/react';
 import AnimalCrossingContainer from './AnimalCrossing';
 
 describe('Animal Crossing Container', () => {
-  it('renders a list of characters', async () => {
+  it('renders a list of villagers', async () => {
     render(<AnimalCrossingContainer />);
-    screen.getByText('yes');
+    const ul = await screen.findByRole('list', { name: 'characters' });
+
+    expect(ul).toMatchSnapshot();
+    
   });
 });
